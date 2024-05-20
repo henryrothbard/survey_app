@@ -23,5 +23,4 @@ router.post('/change', asyncHandler(async (req, res) => {
     res.send({uid, value})
 }));
 
-
 module.exports = router;
