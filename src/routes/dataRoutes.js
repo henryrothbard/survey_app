@@ -19,7 +19,7 @@ router.post('/change', asyncHandler(async (req, res) => {
         res.status(400).send('Bad Request');
         return;
     }
-    await redisClient.set(String(uid), value);
+    await redisClient.set(uid, value);
     res.send({uid, value})
 }));
 
