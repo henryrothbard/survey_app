@@ -1,0 +1,15 @@
+{
+  "name": "survey-app",
+  "version": "1.0.0",
+  "description": "An Express.js app that uses Redis to store survey entries",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Henry Rothbard",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
