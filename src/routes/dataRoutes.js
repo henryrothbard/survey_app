@@ -10,7 +10,7 @@ router.post('/exists', asyncHandler(async (req, res) => {
 
     res.send({uid, exists: !!value});
 
-    console.log(`/api/exists : ${{uid, exists: !!value}}`);
+    console.log("/api/exists : ", {uid, exists: !!value});
 }));
 
 router.post('/change', asyncHandler(async (req, res) => {
@@ -26,7 +26,7 @@ router.post('/change', asyncHandler(async (req, res) => {
 
     res.send({uid, value});
 
-    console.log(`/api/change : ${{uid, value}}`);
+    console.log("/api/change : ", {uid, value});
 }));
 
 module.exports = router;
