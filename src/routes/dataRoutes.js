@@ -15,7 +15,7 @@ router.post('/change', asyncHandler(async (req, res) => {
     const uid = String(req.body.uid);
     const value = Number(req.body.value);
 
-    if (!(value >= process.env.MIN_OPT && value <= process.env.MAX_OPT)) {
+    if (!(Number.isInteger(value) && value >= process.env.MIN_OPT && value <= process.env.MAX_OPT)) {
         res.status(400).send("Invalid Data."); 
         return;
     }
@@ -26,3 +26,5 @@ router.post('/change', asyncHandler(async (req, res) => {
 }));
 
 module.exports = router;
+
+crypto.ra
