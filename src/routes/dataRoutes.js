@@ -9,6 +9,7 @@ router.post('/exists', asyncHandler(async (req, res) => {
     const value = await redisClient.get(uid);
 
     res.send({uid, exists: !!value});
+    console.log(`/api/exists : ${{uid, exists: !!value}}`);
 }));
 
 router.post('/change', asyncHandler(async (req, res) => {
@@ -23,6 +24,7 @@ router.post('/change', asyncHandler(async (req, res) => {
     await redisClient.set(uid, value);
 
     res.send({uid, value})
+    console.log(`/api/change : ${{uid, value}}`);
 }));
 
 module.exports = router;
