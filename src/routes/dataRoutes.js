@@ -26,5 +26,3 @@ router.post('/change', asyncHandler(async (req, res) => {
 }));
 
 module.exports = router;
-
-crypto.ra
