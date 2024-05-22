@@ -8,7 +8,7 @@ router.get('', asyncHandler(async (req, res) => {
     const set = {};
     const keys = await redisClient.keys('*');
     for (let key of keys) {
-        const value = redisClient.get(String(key));
+        const value = Number(redisClient.get(String(key)));
 
         if (!(Number.isInteger(value) && value >= process.env.MIN_OPT && value <= process.env.MAX_OPT)) {
             invalids++; continue;
