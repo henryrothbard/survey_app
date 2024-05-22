@@ -6,9 +6,9 @@ const asyncHandler = require('../utils/errorWrapper');
 router.get('', asyncHandler(async (req, res) => {
     let invalids = 0;
     const set = {};
-    const keys = await redisClient.keys();
+    const keys = await redisClient.keys('*');
     for (let key of keys) {
-        const value = redisClient.get(key);
+        const value = redisClient.get(string(key));
 
         if (!(Number.isInteger(value) && value >= process.env.MIN_OPT && value <= process.env.MAX_OPT)) {
             invalids++; continue;
