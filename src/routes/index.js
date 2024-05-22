@@ -19,3 +19,5 @@ router.get('', asyncHandler(async (req, res) => {
     }
     res.send({set, invalids});
 }))
+
+module.exports = router;
